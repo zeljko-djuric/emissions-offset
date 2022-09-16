@@ -7,15 +7,13 @@ function App() {
   const [trips, setTrips] = React.useState<any[]>([]);
 
   React.useEffect(() => {
-    fetch("http://localhost:3001/getTrips")
+    fetch("http://localhost:3002/getTrips")
       .then((res) => res.json())
       .then((result) => {
         setTrips(result);
       });
   }, []);
 
-  const numberOfTrips = trips.length;
-  console.log("number of trips", numberOfTrips);
   return (
     <Grid
       templateColumns="repeat(3, 1fr)"
