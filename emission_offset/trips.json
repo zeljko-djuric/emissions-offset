@@ -1,0 +1,67 @@
+{
+  "uuid": "65f9aed7-f970-4a13-9f4a-b3d2ce172dbd",
+  "lastMigration": 22,
+  "name": "Trips",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3002,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "25d90e09-822d-4fdd-978c-250f53ca7604",
+      "documentation": "Get trips data",
+      "method": "get",
+      "endpoint": "getTrips",
+      "responses": [
+        {
+          "uuid": "e2d46915-a4f2-46b8-ad31-270a6112b11f",
+          "body": "[\n  {\n      \"title\": \"European Quest\",\n      \"countries\": 8,\n      \"days\": 21,\n      \"emissions_offset\": \"810 kg\",\n      \"trip_rating\": 4.7,\n      \"image_url\": \"https://c0.wallpaperflare.com/preview/789/78/433/netherlands-amsterdam-canal-night.jpg\"\n    },\n    {\n      \"title\": \"Autmn Roadtrip\",\n      \"countries\": 1,\n      \"days\": 14,\n      \"emissions_offset\": \"3.65 t\",\n      \"trip_rating\": 4.7,\n      \"image_url\": \"https://c0.wallpaperflare.com/preview/468/283/613/autumn-street-trees-nature.jpg\"\n    },\n    {\n      \"title\": \"Diving Adventure in Egypt\",\n      \"countries\": 1,\n      \"days\": 5,\n      \"emissions_offset\": \"6.92 t\",\n      \"trip_rating\": 4.7,\n      \"image_url\": \"https://c1.wallpaperflare.com/preview/147/896/983/diving-egypt-underwater-underwater-world.jpg\"\n    }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}
