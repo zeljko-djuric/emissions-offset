@@ -1,25 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Card } from "./Components/Card";
+import { Grid, GridItem } from "@chakra-ui/react";
 
 function App() {
+  const [trips, setTrips] = React.useState<any[]>([]);
+
+  React.useEffect(() => {
+    fetch("http://localhost:3001/getTrips")
+      .then((res) => res.json())
+      .then((result) => {
+        setTrips(result);
+      });
+  }, []);
+
+  const numberOfTrips = trips.length;
+  console.log("number of trips", numberOfTrips);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid
+      templateColumns="repeat(3, 1fr)"
+      gap={10}
+      paddingTop="5"
+      paddingLeft="5"
+    >
+      {trips.map((trip) => (
+        <GridItem>
+          <Card trip={trip} />
+        </GridItem>
+      ))}
+    </Grid>
   );
 }
 
